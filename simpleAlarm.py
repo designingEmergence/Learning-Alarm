@@ -1,3 +1,9 @@
+##Simple Alarm##
+##Author: Prakhar Merhotra
+##This is a simple alarm clock that sounds an alarm.mp4 file (located in
+## the same directory) at a time specified by the user
+## ex. Enter "22:03" (using quotes) to have alarm go off at 10:03 pm
+
 from datetime import datetime
 import os
 
