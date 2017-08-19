@@ -1,5 +1,5 @@
 ##Simple Alarm##
-##Author: Prakhar Merhotra
+##Author: Prakhar Mehrotra
 ##This is a simple alarm clock that sounds an alarm.mp4 file (located in
 ## the same directory) at a time specified by the user
 ## ex. Enter "22:03" (using quotes) to have alarm go off at 10:03 pm
@@ -19,18 +19,18 @@ def hoursMinutesSeconds(td):
 while True:
     now = datetime.now()
     alarmTP = datetime.strptime(alarmTime,timeFormat)
+    #print(alarmTP.hour + 1)
     
     if (now.hour == alarmTP.hour) and (now.minute == alarmTP.minute) and (now.second == alarmTP.second):
         print("ALARM")
         os.system('mpg123 -q alarm.mp3')
-        break
+        #break
 
-    else:
-        if now.second != prevSec:
-            difference = alarmTP-now
-            dHours, dMinutes, dSeconds = hoursMinutesSeconds(difference)
-            print("Time to alarm: "+'{0}:{1:02d}:{2:02d}'.format(dHours,dMinutes,dSeconds))
-            prevSec = now.second
+    elif now.second != prevSec:
+        difference = alarmTP-now
+        dHours, dMinutes, dSeconds = hoursMinutesSeconds(difference)
+        print("Time to alarm: "+'{0}:{1:02d}:{2:02d}'.format(dHours,dMinutes,dSeconds))
+        prevSec = now.second
 
     
 
